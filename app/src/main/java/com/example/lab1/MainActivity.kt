@@ -28,15 +28,18 @@ class MainActivity : AppCompatActivity() {
         inputForm.addTextChangedListener(object: TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (s.isNullOrEmpty()) {
-                    outputLabel.text = R.string.morda.toString()
+                    outputLabel.text = getString(R.string.morda)
                 }
-                else {
+                else if (s.length == 1) {
                     val ch = s.first()
                     outputLabel.text = when {
                         ch.isDigit() -> "Это цифра!"
                         charArrayOf('&', '#', '<').contains(ch) -> "Это спецсимвол!"
                         else -> "Непредусмотренный вариант"
                     }
+                }
+                else {
+                    s.delete(0, s.length - 1)
                 }
             }
 

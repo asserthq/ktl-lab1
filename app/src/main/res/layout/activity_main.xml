@@ -22,7 +22,7 @@
             android:id="@+id/main_form"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:maxLength="1"
+            android:maxLength="2"
             android:textAlignment="center"
             android:textSize="60sp" />
     </com.google.android.material.textfield.TextInputLayout>

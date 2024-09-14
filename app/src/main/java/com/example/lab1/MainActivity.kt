@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -21,14 +22,21 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        var form: TextInputEditText = findViewById(R.id.main_form)
-        form.addTextChangedListener(object: TextWatcher {
+        val inputForm: TextInputEditText = findViewById(R.id.main_form)
+        val outputLabel: TextView = findViewById(R.id.main_label)
+
+        inputForm.addTextChangedListener(object: TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (s.isNullOrEmpty()) {
-                    Log.d("tttag", "null or empty")
+                    outputLabel.text = "0_o"
                 }
                 else {
-                    Log.d("tttag", "not empty")
+                    val ch = s.first()
+                    outputLabel.text = when {
+                        ch.isDigit() -> "Это цифра!"
+                        charArrayOf('&', '#', '<').contains(ch) -> "Это спецсимвол!"
+                        else -> "Непредусмотренный вариант"
+                    }
                 }
             }
 

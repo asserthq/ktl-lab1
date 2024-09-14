@@ -9,8 +9,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/main_form_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="81dp"
+        android:layout_height="121dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="200dp"
         android:layout_marginEnd="8dp"
@@ -20,22 +20,24 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/main_form"
-            android:layout_width="89dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/main_form_hint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:maxLength="1"
-            android:textColorHint="#546E7A" />
+            android:textAlignment="center"
+            android:textSize="60sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/main_label"
-        android:layout_width="268dp"
-        android:layout_height="36dp"
+        android:layout_width="269dp"
+        android:layout_height="68dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:text="0_o"
+        android:text="@string/morda"
         android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"

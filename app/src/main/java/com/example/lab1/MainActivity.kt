@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         inputForm.addTextChangedListener(object: TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 if (s.isNullOrEmpty()) {
-                    outputLabel.text = "0_o"
+                    outputLabel.text = R.string.morda.toString()
                 }
                 else {
                     val ch = s.first()

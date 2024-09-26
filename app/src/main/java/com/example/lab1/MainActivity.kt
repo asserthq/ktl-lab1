@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 else {
-                    s.delete(0, s.length - 1)
+                    s.replace(0, s.length, s.last().toString())
                 }
             }
 
